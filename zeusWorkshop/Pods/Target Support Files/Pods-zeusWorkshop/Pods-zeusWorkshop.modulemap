@@ -1,0 +1,6 @@
+framework module Pods_zeusWorkshop {
+  umbrella header "Pods-zeusWorkshop-umbrella.h"
+
+  export *
+  module * { export * }
+}

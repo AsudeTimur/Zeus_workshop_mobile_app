@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0C151AA8EE3664D48DD5C42 /* Pods_zeusWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61B5D2BCC9D98906724FA46 /* Pods_zeusWorkshop.framework */; };
+		D312B77D2BB1FF45008D646A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D312B77C2BB1FF45008D646A /* GoogleService-Info.plist */; };
 		D3B232AB2BA9B9EB0098B8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */; };
 		D3B232AD2BA9B9EB0098B8A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AC2BA9B9EB0098B8A8 /* SceneDelegate.swift */; };
 		D3B232AF2BA9B9EB0098B8A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AE2BA9B9EB0098B8A8 /* ViewController.swift */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23D73601BC745C1D15F5C702 /* Pods-zeusWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeusWorkshop.release.xcconfig"; path = "Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop.release.xcconfig"; sourceTree = "<group>"; };
+		54A65090D17E1D557305C5E5 /* Pods-zeusWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeusWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
+		A61B5D2BCC9D98906724FA46 /* Pods_zeusWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeusWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D312B77C2BB1FF45008D646A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3B232A72BA9B9EB0098B8A8 /* zeusWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeusWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B232AC2BA9B9EB0098B8A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C151AA8EE3664D48DD5C42 /* Pods_zeusWorkshop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16E32038E1ED4002B0ECB1D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A61B5D2BCC9D98906724FA46 /* Pods_zeusWorkshop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		471791D43570D1AED6C22931 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54A65090D17E1D557305C5E5 /* Pods-zeusWorkshop.debug.xcconfig */,
+				23D73601BC745C1D15F5C702 /* Pods-zeusWorkshop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3B2329E2BA9B9EB0098B8A8 = {
 			isa = PBXGroup;
 			children = (
 				D3B232A92BA9B9EB0098B8A8 /* zeusWorkshop */,
 				D3B232A82BA9B9EB0098B8A8 /* Products */,
+				471791D43570D1AED6C22931 /* Pods */,
+				16E32038E1ED4002B0ECB1D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */,
 				D3B232B52BA9B9EC0098B8A8 /* LaunchScreen.storyboard */,
 				D3B232B82BA9B9EC0098B8A8 /* Info.plist */,
+				D312B77C2BB1FF45008D646A /* GoogleService-Info.plist */,
 			);
 			path = zeusWorkshop;
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3B232BB2BA9B9EC0098B8A8 /* Build configuration list for PBXNativeTarget "zeusWorkshop" */;
 			buildPhases = (
+				66E74CF800718B233BEA38C9 /* [CP] Check Pods Manifest.lock */,
 				D3B232A32BA9B9EB0098B8A8 /* Sources */,
 				D3B232A42BA9B9EB0098B8A8 /* Frameworks */,
 				D3B232A52BA9B9EB0098B8A8 /* Resources */,
+				2DCE07FD37DEA32CF64ADF53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B232B42BA9B9EC0098B8A8 /* Assets.xcassets in Resources */,
+				D312B77D2BB1FF45008D646A /* GoogleService-Info.plist in Resources */,
 				D3B232B72BA9B9EC0098B8A8 /* Base in Resources */,
 				D3B232B22BA9B9EB0098B8A8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DCE07FD37DEA32CF64ADF53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66E74CF800718B233BEA38C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zeusWorkshop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3B232A32BA9B9EB0098B8A8 /* Sources */ = {
@@ -203,7 +275,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +338,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +359,7 @@
 		};
 		D3B232BC2BA9B9EC0098B8A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A65090D17E1D557305C5E5 /* Pods-zeusWorkshop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +387,7 @@
 		};
 		D3B232BD2BA9B9EC0098B8A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D73601BC745C1D15F5C702 /* Pods-zeusWorkshop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -8,28 +8,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Upload View Controller-->
         <scene sceneID="ikZ-No-iJT">
             <objects>
-                <viewController id="piA-FI-eyW" sceneMemberID="viewController">
+                <viewController id="piA-FI-eyW" customClass="UploadViewController" customModule="zeusWorkshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="osQ-cw-yZx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="bja-eS-SS9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="dTn-er-GRV">
+                    <tabBarItem key="tabBarItem" title="" image="plus" catalog="system" id="dTn-er-GRV">
                         <color key="badgeColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oib-ai-OuA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="121"/>
+            <point key="canvasLocation" x="740" y="185"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
+        <scene sceneID="6C1-UA-DPJ">
+            <objects>
+                <viewController id="SWa-q1-SfZ" customClass="UserViewController" customModule="zeusWorkshop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K0P-yE-MIv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcg-3N-pVO">
+                                <rect key="frame" x="150" y="699" width="94" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Çıkış Yap">
+                                    <color key="baseBackgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cikisYapButon:" destination="SWa-q1-SfZ" eventType="touchUpInside" id="SYE-5e-bHp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Idd-FF-DHP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="XzU-io-pg6"/>
+                    <connections>
+                        <segue destination="ENd-DX-rrw" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="4hi-bD-yGJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXF-De-1iB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739.69465648854964" y="847.88732394366207"/>
+        </scene>
+        <!--Home Page View Controller-->
         <scene sceneID="hdu-5D-FzF">
             <objects>
-                <viewController id="ELc-JZ-rLG" sceneMemberID="viewController">
+                <viewController id="ELc-JZ-rLG" customClass="HomePageViewController" customModule="zeusWorkshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ib4-48-iFA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +87,7 @@
                     <connections>
                         <segue destination="ELc-JZ-rLG" kind="relationship" relationship="viewControllers" id="sYG-hy-zt7"/>
                         <segue destination="piA-FI-eyW" kind="relationship" relationship="viewControllers" id="RLR-pm-rlo"/>
+                        <segue destination="SWa-q1-SfZ" kind="relationship" relationship="viewControllers" id="fUg-Pv-fon"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhD-Ds-4NA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,7 +97,7 @@
         <!--View Controller-->
         <scene sceneID="Ynl-Uk-f8R">
             <objects>
-                <viewController id="ENd-DX-rrw" customClass="ViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ENd-DX-rrw" customClass="ViewController" customModule="zeusWorkshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xEq-Je-l7I">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,11 +136,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="zeusLogoLight" translatesAutoresizingMaskIntoConstraints="NO" id="Emp-Y5-K7q">
                                 <rect key="frame" x="96" y="82" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="4aQ-lV-KcV"/>
+                                    <constraint firstAttribute="height" constant="200" id="iLV-Pk-p7j"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWW-FS-Ue9">
-                                <rect key="frame" x="84" y="783" width="154" height="35"/>
+                                <rect key="frame" x="84" y="797" width="154" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Hesabın yok mu?">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
@@ -115,7 +148,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-wU-VHL">
-                                <rect key="frame" x="231" y="784" width="77" height="34"/>
+                                <rect key="frame" x="231" y="798" width="77" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Kaydol">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
@@ -130,25 +163,26 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="d5r-XB-epB" firstAttribute="trailing" secondItem="bVO-qh-7v4" secondAttribute="trailing" id="5O7-OZ-HBo"/>
-                            <constraint firstItem="aWW-FS-Ue9" firstAttribute="baseline" secondItem="VN5-wU-VHL" secondAttribute="baseline" id="7R2-Z4-oKQ"/>
-                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="top" secondItem="SJE-FI-9K3" secondAttribute="top" constant="23" id="7c2-QJ-uZj"/>
-                            <constraint firstItem="bVO-qh-7v4" firstAttribute="centerX" secondItem="dW7-KP-h6k" secondAttribute="centerX" id="EQt-9x-KdO"/>
-                            <constraint firstItem="aWW-FS-Ue9" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="84" id="Fi4-UG-3wD"/>
-                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="centerX" secondItem="d5r-XB-epB" secondAttribute="centerX" id="Gl2-c7-hig"/>
-                            <constraint firstItem="d5r-XB-epB" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="50" id="QeC-hP-waG"/>
-                            <constraint firstItem="d5r-XB-epB" firstAttribute="leading" secondItem="bVO-qh-7v4" secondAttribute="leading" id="a40-Kp-rvW"/>
-                            <constraint firstItem="VN5-wU-VHL" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="231" id="aTq-hM-hwd"/>
-                            <constraint firstItem="dW7-KP-h6k" firstAttribute="top" secondItem="f5E-93-7lM" secondAttribute="bottom" constant="8" id="dmy-uz-ej7"/>
-                            <constraint firstItem="bVO-qh-7v4" firstAttribute="top" secondItem="d5r-XB-epB" secondAttribute="bottom" constant="8" id="hoa-CB-UDs"/>
-                            <constraint firstItem="d5r-XB-epB" firstAttribute="top" secondItem="Emp-Y5-K7q" secondAttribute="bottom" constant="8" id="oGT-aO-ggU"/>
-                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="centerX" secondItem="xEq-Je-l7I" secondAttribute="centerX" id="pTF-mx-UO7"/>
-                            <constraint firstItem="f5E-93-7lM" firstAttribute="top" secondItem="bVO-qh-7v4" secondAttribute="bottom" constant="8" id="pdE-NW-Y98"/>
-                            <constraint firstItem="bVO-qh-7v4" firstAttribute="trailing" secondItem="f5E-93-7lM" secondAttribute="trailing" id="rKU-T2-thR"/>
-                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="96" id="sBf-Ki-90e"/>
-                            <constraint firstItem="aWW-FS-Ue9" firstAttribute="bottom" secondItem="SJE-FI-9K3" secondAttribute="bottom" id="uWm-sg-FIh"/>
+                            <constraint firstItem="f5E-93-7lM" firstAttribute="top" secondItem="bVO-qh-7v4" secondAttribute="bottom" constant="8" id="28S-W0-6MN"/>
+                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="centerX" secondItem="xEq-Je-l7I" secondAttribute="centerX" id="2SE-TK-wAN"/>
+                            <constraint firstItem="bVO-qh-7v4" firstAttribute="top" secondItem="d5r-XB-epB" secondAttribute="bottom" constant="8" id="3Ci-CV-Zzm"/>
+                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="96" id="C9K-4D-6MZ"/>
+                            <constraint firstItem="d5r-XB-epB" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="50" id="LbX-gx-L8T"/>
+                            <constraint firstItem="d5r-XB-epB" firstAttribute="trailing" secondItem="bVO-qh-7v4" secondAttribute="trailing" id="MGF-xY-LCg"/>
+                            <constraint firstItem="bVO-qh-7v4" firstAttribute="trailing" secondItem="f5E-93-7lM" secondAttribute="trailing" id="QYe-6g-5uU"/>
+                            <constraint firstItem="bVO-qh-7v4" firstAttribute="centerX" secondItem="dW7-KP-h6k" secondAttribute="centerX" id="SrJ-Pl-FIq"/>
+                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="top" secondItem="SJE-FI-9K3" secondAttribute="top" constant="82" id="WS5-j5-Sdt"/>
+                            <constraint firstItem="d5r-XB-epB" firstAttribute="top" secondItem="Emp-Y5-K7q" secondAttribute="bottom" constant="8" id="fua-Vk-jCI"/>
+                            <constraint firstItem="SJE-FI-9K3" firstAttribute="bottom" secondItem="aWW-FS-Ue9" secondAttribute="bottom" constant="20" id="gHW-hI-YmF"/>
+                            <constraint firstItem="aWW-FS-Ue9" firstAttribute="baseline" secondItem="VN5-wU-VHL" secondAttribute="baseline" id="hWy-hH-Ndm"/>
+                            <constraint firstItem="aWW-FS-Ue9" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="84" id="ppg-ki-5sJ"/>
+                            <constraint firstItem="VN5-wU-VHL" firstAttribute="leading" secondItem="SJE-FI-9K3" secondAttribute="leading" constant="231" id="snM-b7-RVK"/>
+                            <constraint firstItem="Emp-Y5-K7q" firstAttribute="centerX" secondItem="d5r-XB-epB" secondAttribute="centerX" id="ton-bc-kHK"/>
+                            <constraint firstItem="d5r-XB-epB" firstAttribute="leading" secondItem="bVO-qh-7v4" secondAttribute="leading" id="vQ8-Zo-VtL"/>
+                            <constraint firstItem="dW7-KP-h6k" firstAttribute="top" secondItem="f5E-93-7lM" secondAttribute="bottom" constant="8" id="yQL-6n-ays"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rab-YL-OAy"/>
                     <connections>
                         <outlet property="epostaText" destination="d5r-XB-epB" id="vot-bL-Dkf"/>
                         <outlet property="sifreText" destination="bVO-qh-7v4" id="dM6-Nq-9hO"/>
@@ -162,19 +196,24 @@
         <!--View Controller-->
         <scene sceneID="XIS-2w-p67">
             <objects>
-                <viewController id="C1c-on-VOp" customClass="ViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C1c-on-VOp" customClass="ViewController" customModule="zeusWorkshop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hIQ-sc-j1m">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zeusLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dPw-hm-KZK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="zeusLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dPw-hm-KZK">
                                 <rect key="frame" x="97" y="326" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Xe-68-Lnu"/>
                         <color key="backgroundColor" red="0.89411764709999997" green="0.8862745098" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dPw-hm-KZK" firstAttribute="centerX" secondItem="hIQ-sc-j1m" secondAttribute="centerX" id="7ep-UK-2jH"/>
+                            <constraint firstItem="dPw-hm-KZK" firstAttribute="top" secondItem="9Xe-68-Lnu" secondAttribute="top" constant="267" id="YVG-UT-0wf"/>
+                            <constraint firstItem="dPw-hm-KZK" firstAttribute="centerY" secondItem="hIQ-sc-j1m" secondAttribute="centerY" id="dMg-Ch-dmQ"/>
+                            <constraint firstItem="dPw-hm-KZK" firstAttribute="leading" secondItem="9Xe-68-Lnu" secondAttribute="leading" constant="97" id="tWa-Rg-QI3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhG-dQ-RC9" sceneMemberID="firstResponder"/>
@@ -186,13 +225,14 @@
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="lock.fill" catalog="system" width="125" height="128"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="zeusLogo" width="500" height="500"/>
         <image name="zeusLogoLight" width="1038" height="1038"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

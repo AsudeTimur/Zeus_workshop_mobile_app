@@ -17,7 +17,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func girisYapButon(_ sender: Any) {
-        performSegue(withIdentifier: "toFeedVC", sender: nil)
+        if epostaText.text != "" && sifreText.text != ""{
+            Auth.auth().signIn(withEmail: epostaText.text!, password: sifreText.text!) { (authdata, error) in
+                if error != nil{
+                    self.makeAlert(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Hata")
+                }else{
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+            }
+        }else{
+            makeAlert(titleInput: "Yanlış e-mail ya da Şifre", messageInput: "E-mail ya da şifre bir hesaba ait değil. Lütfen e-mail ya da şifreni kontrol edip tekrar dene.")
+        }
     }
     
     //Kullanıcı girişleri veri tabanı ile yapıldı

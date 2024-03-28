@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class UserViewController: UIViewController {
 
@@ -15,8 +16,15 @@ class UserViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //Firebase çıkış işlemi
     @IBAction func cikisYapButon(_ sender: Any) {
-        performSegue(withIdentifier: "toViewController", sender: nil)
+        do{
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "toViewController", sender: nil)
+        }catch{
+            print("Hata")
+        }
     }
+    
     
 }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseStorage
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,6 +25,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 wsImageView.addGestureRecognizer(gestureRecognizer)
     }
     
+    //kütüphaneden fotoğraf seçme
     @objc func chooseImage(){
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
@@ -35,9 +38,31 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.dismiss(animated: true, completion: nil)
         }
     
-    @IBAction func paylasButonClicked(_ sender: Any) {
-    }
     
+    //verileri firebase'e kaydetme
+    @IBAction func paylasButonClicked(_ sender: Any) {
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let mediaFolder = storageReference.child("media")
+        
+        if let data = wsImageView.image?.jpegData(compressionQuality: 0.5){
+            let imageReference = mediaFolder.child("image.jpeg")
+            imageReference.putData(data, metadata: nil){
+                (metadata, error) in
+                if error != nil{
+                    print(error?.localizedDescription)
+                }else{
+                    imageReference.downloadURL(){(url, error) in
+                        if error == nil{
+                            let imageUrl = url?.absoluteString
+                            print(imageUrl)
+                        }
+                    }
+                }
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -154,14 +154,88 @@
                     <view key="view" contentMode="scaleToFill" id="Ib4-48-iFA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="chM-hj-uJD">
+                                <rect key="frame" x="0.0" y="49" width="393" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="139" id="Iqh-qr-CQ7" customClass="HomePageCell" customModule="zeusWorkshop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="139"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iqh-qr-CQ7" id="Whu-tv-U65">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tarih - Saat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93S-rX-VKF">
+                                                    <rect key="frame" x="280" y="11" width="93" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="rmR-J0-Kiq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Workshop Hakkında Bilgi" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33G-CZ-dcK">
+                                                    <rect key="frame" x="252" y="40" width="121" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Konum" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tph-WB-5A9">
+                                                    <rect key="frame" x="280" y="97" width="93" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ffp-6a-UGX">
+                                                    <rect key="frame" x="20" y="11" width="202" height="107"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="202" id="Wub-hp-BB4"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="33G-CZ-dcK" firstAttribute="leading" secondItem="Ffp-6a-UGX" secondAttribute="trailing" constant="30" id="79p-GZ-WqL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ffp-6a-UGX" secondAttribute="bottom" constant="10" id="7Me-IB-BYC"/>
+                                                <constraint firstItem="93S-rX-VKF" firstAttribute="leading" secondItem="tph-WB-5A9" secondAttribute="leading" id="DoJ-kD-shI"/>
+                                                <constraint firstItem="Ffp-6a-UGX" firstAttribute="leading" secondItem="Whu-tv-U65" secondAttribute="leadingMargin" id="FUf-Ss-avg"/>
+                                                <constraint firstItem="33G-CZ-dcK" firstAttribute="trailing" secondItem="tph-WB-5A9" secondAttribute="trailing" id="JBz-Xv-2EU"/>
+                                                <constraint firstItem="93S-rX-VKF" firstAttribute="trailing" secondItem="33G-CZ-dcK" secondAttribute="trailing" id="LnV-lA-GHg"/>
+                                                <constraint firstItem="Ffp-6a-UGX" firstAttribute="top" secondItem="93S-rX-VKF" secondAttribute="top" id="YtU-7v-Kk4"/>
+                                                <constraint firstItem="33G-CZ-dcK" firstAttribute="top" secondItem="93S-rX-VKF" secondAttribute="bottom" constant="8" id="d5X-Np-eup"/>
+                                                <constraint firstItem="Ffp-6a-UGX" firstAttribute="top" secondItem="Whu-tv-U65" secondAttribute="topMargin" id="eGn-22-nEC"/>
+                                                <constraint firstItem="Ffp-6a-UGX" firstAttribute="centerY" secondItem="33G-CZ-dcK" secondAttribute="centerY" id="l4l-mo-5fw"/>
+                                                <constraint firstItem="Ffp-6a-UGX" firstAttribute="bottom" secondItem="tph-WB-5A9" secondAttribute="bottom" id="ncG-Jo-9fA"/>
+                                                <constraint firstItem="93S-rX-VKF" firstAttribute="leading" secondItem="Ffp-6a-UGX" secondAttribute="trailing" constant="58" id="z3e-mg-Ddc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="WorkshopImageView" destination="Ffp-6a-UGX" id="ce7-5I-bo4"/>
+                                            <outlet property="workshopDateTimeLabel" destination="93S-rX-VKF" id="VTJ-C8-ein"/>
+                                            <outlet property="workshopInformationLabel" destination="33G-CZ-dcK" id="d7m-Lu-ikk"/>
+                                            <outlet property="workshopLocationLabel" destination="tph-WB-5A9" id="B8c-OE-skG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XOj-WD-xQZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="chM-hj-uJD" firstAttribute="leading" secondItem="XOj-WD-xQZ" secondAttribute="leading" id="9a3-3A-i0T"/>
+                            <constraint firstItem="chM-hj-uJD" firstAttribute="bottom" secondItem="XOj-WD-xQZ" secondAttribute="bottom" id="Qjg-ae-a2R"/>
+                            <constraint firstItem="chM-hj-uJD" firstAttribute="centerX" secondItem="Ib4-48-iFA" secondAttribute="centerX" id="i9X-b4-ouE"/>
+                            <constraint firstItem="chM-hj-uJD" firstAttribute="centerY" secondItem="Ib4-48-iFA" secondAttribute="centerY" id="nVM-oj-tDj"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" landscapeImage="lock.fill" id="hvP-tS-COX"/>
+                    <connections>
+                        <outlet property="tableView" destination="chM-hj-uJD" id="8EX-nG-GAr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eu-fN-kUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="-486"/>
+            <point key="canvasLocation" x="739.69465648854964" y="-486.61971830985919"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pxc-r5-3u3">
@@ -322,7 +396,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

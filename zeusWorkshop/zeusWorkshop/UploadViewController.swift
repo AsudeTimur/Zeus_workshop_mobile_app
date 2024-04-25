@@ -73,7 +73,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                             let firestoreDatabase = Firestore.firestore()
                             //firebase db'leri okumak, yazmak, değişikleri dinlemek vb.
                             var firestorReference : DocumentReference? = nil
-                            let firestoreWorkshop = ["imageURL" : imageUrl!, "workshoppedBy" : Auth.auth().currentUser!.email!, "workshopName" : "name", "date" : "date", "imformation" : "imformation", "location" : "location"] as [String : Any]
+                            let firestoreWorkshop = ["imageURL" : imageUrl!, "workshoppedBy" : Auth.auth().currentUser!.email!, "workshopName" : self.wsAdi.text! , "date" : self.wsTarih.text!, "imformation" : self.wsDetay.text!, "location" : self.wsKonum.text!] as [String : Any]
                             firestorReference = firestoreDatabase.collection("Workshops").addDocument(data: firestoreWorkshop, completion: { (error) in
                                 if error != nil {
                                     self.makeAlert(titleInput: "Hata!", messageInput: error?.localizedDescription ?? "Hata")

@@ -10,10 +10,12 @@ import FirebaseAuth
 
 class UserViewController: UIViewController {
 
+    @IBOutlet weak var profileImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
     }
     
     //Firebase çıkış işlemi

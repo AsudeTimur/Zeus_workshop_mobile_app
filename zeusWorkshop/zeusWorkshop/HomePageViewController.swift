@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import SDWebImage
 
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!

@@ -19,6 +19,7 @@
 		D3B232B22BA9B9EB0098B8A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B12BA9B9EB0098B8A8 /* Base */; };
 		D3B232B42BA9B9EC0098B8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */; };
 		D3B232B72BA9B9EC0098B8A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B62BA9B9EC0098B8A8 /* Base */; };
+		D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B232B62BA9B9EC0098B8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B232B82BA9B9EC0098B8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */,
 				D3B232AC2BA9B9EB0098B8A8 /* SceneDelegate.swift */,
 				D3B232AE2BA9B9EB0098B8A8 /* ViewController.swift */,
+				D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */,
 				D3254AC92BB45AC900D72F0E /* UserViewController.swift */,
 				D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */,
 				D3254AC52BB45A8700D72F0E /* UploadViewController.swift */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */,
 				D3B232AF2BA9B9EB0098B8A8 /* ViewController.swift in Sources */,
 				D3254ACA2BB45AC900D72F0E /* UserViewController.swift in Sources */,
 				D3254AC62BB45A8700D72F0E /* UploadViewController.swift in Sources */,

@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sifreUnuttumButon(_ sender: Any) {
+        self.performSegue(withIdentifier: "toForgotPassSegue", sender: nil)
     }
     
     //Kullanıcı yanlış işlem yaptığında hata mesajı göstermek için fonksiyon oluşturuldu

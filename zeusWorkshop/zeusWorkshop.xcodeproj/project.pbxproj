@@ -19,6 +19,7 @@
 		D3B232B22BA9B9EB0098B8A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B12BA9B9EB0098B8A8 /* Base */; };
 		D3B232B42BA9B9EC0098B8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */; };
 		D3B232B72BA9B9EC0098B8A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B62BA9B9EC0098B8A8 /* Base */; };
+		D3BCCF822BEA5D31009B9904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */; };
 		D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B232B62BA9B9EC0098B8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B232B82BA9B9EC0098B8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */,
 				D3254AC52BB45A8700D72F0E /* UploadViewController.swift */,
 				D3B232B02BA9B9EB0098B8A8 /* Main.storyboard */,
+				D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */,
 				D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */,
 				D3B232B52BA9B9EC0098B8A8 /* LaunchScreen.storyboard */,
 				D3B232B82BA9B9EC0098B8A8 /* Info.plist */,
@@ -231,6 +234,7 @@
 				D3254AC62BB45A8700D72F0E /* UploadViewController.swift in Sources */,
 				D3B232AB2BA9B9EB0098B8A8 /* AppDelegate.swift in Sources */,
 				D3254AC82BB45AB900D72F0E /* HomePageViewController.swift in Sources */,
+				D3BCCF822BEA5D31009B9904 /* SignUpViewController.swift in Sources */,
 				D33E9E792BD17BF300F20BEA /* HomePageCell.swift in Sources */,
 				D3B232AD2BA9B9EB0098B8A8 /* SceneDelegate.swift in Sources */,
 			);

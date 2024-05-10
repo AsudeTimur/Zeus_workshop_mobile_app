@@ -9,12 +9,14 @@ import UIKit
 
 class HomePageCell: UITableViewCell {
 
+
     @IBOutlet weak var workshopImageView: UIImageView!
     @IBOutlet weak var workshopNameLabel: UILabel!
     @IBOutlet weak var workshopDateTimeLabel: UILabel!
-    @IBOutlet weak var workshopInformationLabel: UILabel!
     @IBOutlet weak var workshopLocationLabel: UILabel!
-    @IBOutlet weak var workshoppedByLabel: UILabel!
+    @IBOutlet weak var workshopInformationLabel: UILabel!
+    @IBOutlet weak var workshopByLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -14,6 +14,7 @@
 		D33BCA8B2BB588250063D953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D33BCA8A2BB588250063D953 /* GoogleService-Info.plist */; };
 		D33E9E792BD17BF300F20BEA /* HomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E9E782BD17BF300F20BEA /* HomePageCell.swift */; };
 		D399FA2B2BF34012002C9D67 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D399FA2A2BF34012002C9D67 /* .gitignore */; };
+		D399FA2F2BF3518D002C9D67 /* WorkshopContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399FA2E2BF3518D002C9D67 /* WorkshopContentPageViewController.swift */; };
 		D3B232AB2BA9B9EB0098B8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */; };
 		D3B232AD2BA9B9EB0098B8A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AC2BA9B9EB0098B8A8 /* SceneDelegate.swift */; };
 		D3B232AF2BA9B9EB0098B8A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AE2BA9B9EB0098B8A8 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		D3B232B72BA9B9EC0098B8A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B62BA9B9EC0098B8A8 /* Base */; };
 		D3BCCF822BEA5D31009B9904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */; };
 		D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */; };
+		D3D7F4C52BF367820068A959 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7F4C42BF367820068A959 /* UserSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		D33BCA8A2BB588250063D953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D33E9E782BD17BF300F20BEA /* HomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCell.swift; sourceTree = "<group>"; };
 		D399FA2A2BF34012002C9D67 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		D399FA2E2BF3518D002C9D67 /* WorkshopContentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopContentPageViewController.swift; sourceTree = "<group>"; };
 		D3B232A72BA9B9EB0098B8A8 /* zeusWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeusWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B232AC2BA9B9EB0098B8A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		D3B232B82BA9B9EC0098B8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		D3D7F4C42BF367820068A959 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,10 @@
 				D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */,
 				D3254AC92BB45AC900D72F0E /* UserViewController.swift */,
 				D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */,
+				D399FA2E2BF3518D002C9D67 /* WorkshopContentPageViewController.swift */,
 				D3254AC52BB45A8700D72F0E /* UploadViewController.swift */,
 				D3B232B02BA9B9EB0098B8A8 /* Main.storyboard */,
+				D3D7F4C42BF367820068A959 /* UserSettingsViewController.swift */,
 				D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */,
 				D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */,
 				D3B232B52BA9B9EC0098B8A8 /* LaunchScreen.storyboard */,
@@ -232,11 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D399FA2F2BF3518D002C9D67 /* WorkshopContentPageViewController.swift in Sources */,
 				D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */,
 				D3B232AF2BA9B9EB0098B8A8 /* ViewController.swift in Sources */,
 				D3254ACA2BB45AC900D72F0E /* UserViewController.swift in Sources */,
 				D3254AC62BB45A8700D72F0E /* UploadViewController.swift in Sources */,
 				D3B232AB2BA9B9EB0098B8A8 /* AppDelegate.swift in Sources */,
+				D3D7F4C52BF367820068A959 /* UserSettingsViewController.swift in Sources */,
 				D3254AC82BB45AB900D72F0E /* HomePageViewController.swift in Sources */,
 				D3BCCF822BEA5D31009B9904 /* SignUpViewController.swift in Sources */,
 				D33E9E792BD17BF300F20BEA /* HomePageCell.swift in Sources */,

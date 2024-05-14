@@ -101,4 +101,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 return cell
         }
+    @IBAction func workshopDetailClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "toWorkshopContentPage", sender: nil)
     }
+}

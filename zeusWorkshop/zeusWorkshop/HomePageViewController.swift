@@ -16,11 +16,12 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var userEmailArray = [String]()
-        var workshopNameArray = [String]()
-        var workshopImageArray = [String]()
-        var workshopDateArray = [String]()
-        var workshopInformationArray = [String]()
-        var workshopLocationArray = [String]()
+    var workshopNameArray = [String]()
+    var workshopImageArray = [String]()
+    var workshopDateArray = [String]()
+    var workshopInformationArray = [String]()
+    var workshopLocationArray = [String]()
+    
 
 
     override func viewDidLoad() {
@@ -67,41 +68,37 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                         self.workshopDateArray.append(date)
                     }
                     if let imageUrl = document.get("imageUrl") as? String {
-                                        self.workshopImageArray.append(imageUrl)
-                                    }
+                        self.workshopImageArray.append(imageUrl)
+                    }
                                     
-                                    if let information = document.get("information") as? String {
-                                        self.workshopInformationArray.append(information)
-                                    }
+                    if let information = document.get("information") as? String {
+                        self.workshopInformationArray.append(information)
+                    }
                                     
-                                    if let location = document.get("workshopLocation") as? String {
-                                        self.workshopLocationArray.append(location)
-                                    } else {
-                                        // Eğer workshopLocation bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
-                                        self.workshopLocationArray.append("Bilgi Yok")
-                                    }
-                                }
-                                
-                                self.tableView.reloadData()
-                            }
-                        }
+                    if let location = document.get("workshopLocation") as? String {
+                        self.workshopLocationArray.append(location)
+                    } else {
+                    // Eğer workshopLocation bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
+                        self.workshopLocationArray.append("Bilgi Yok")
+                       }
+                    }
+                        self.tableView.reloadData()
+                 }
+                }
 
-           
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.userEmailArray.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomePageCell
-            cell.workshopByLabel.text = self.userEmailArray[indexPath.row]
-                    cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
-                    cell.workshopDateTimeLabel.text = self.workshopDateArray[indexPath.row]
-                    cell.workshopInformationLabel.text = "Bilgi Yok"
-                    cell.workshopLocationLabel.text = self.workshopLocationArray[indexPath.row]
-                    cell.workshopImageView.image = UIImage(named: "zeusLogo.png")
-                    return cell
+                cell.workshopByLabel.text = self.userEmailArray[indexPath.row]
+                cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
+                cell.workshopDateTimeLabel.text = self.workshopDateArray[indexPath.row]
+                cell.workshopInformationLabel.text = "Bilgi Yok"
+                cell.workshopLocationLabel.text = self.workshopLocationArray[indexPath.row]
+                cell.workshopImageView.image = UIImage(named: "zeusLogo.png")
 
+                return cell
         }
-
-       
     }

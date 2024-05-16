@@ -15,13 +15,12 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    var userEmailArray = [String]()
+    var workshopInstructorArray = [String]()
     var workshopNameArray = [String]()
     var workshopImageArray = [String]()
-    var workshopDateArray = [String]()
-    var workshopInformationArray = [String]()
+    var workshopDateTimeArray = [String]()
     var workshopLocationArray = [String]()
-    
+    var workshopDescriptionArray = [String]()
 
 
     override func viewDidLoad() {
@@ -46,37 +45,38 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                     return
                 }
                 
-                self.userEmailArray.removeAll()
+                self.workshopInstructorArray.removeAll()
                 self.workshopNameArray.removeAll()
-                self.workshopDateArray.removeAll()
+                self.workshopDateTimeArray.removeAll()
                 self.workshopImageArray.removeAll()
-                self.workshopInformationArray.removeAll()
+                self.workshopDescriptionArray.removeAll()
                 self.workshopLocationArray.removeAll()
+                
                 
                 for document in snapshot.documents {
                     let documentID = document.documentID
                     
-                    if let workshoppedBy = document.get("workshoppedBy") as? String {
-                        self.userEmailArray.append(workshoppedBy)
+                    if let wsEgitmen = document.get("wsEgitmen") as? String {
+                        self.workshopInstructorArray.append(wsEgitmen)
                     }
                     
-                    if let workshopName = document.get("workshopName") as? String {
-                        self.workshopNameArray.append(workshopName)
+                    if let wsAdi = document.get("wsAdi") as? String {
+                        self.workshopNameArray.append(wsAdi)
                     }
                     
-                    if let date = document.get("date") as? String {
-                        self.workshopDateArray.append(date)
+                    if let wsTarihSaat = document.get("wsTarihSaat") as? String {
+                        self.workshopDateTimeArray.append(wsTarihSaat)
                     }
                     if let imageUrl = document.get("imageUrl") as? String {
                         self.workshopImageArray.append(imageUrl)
                     }
                                     
-                    if let information = document.get("information") as? String {
-                        self.workshopInformationArray.append(information)
+                    if let wsAciklama = document.get("wsAciklama") as? String {
+                        self.workshopDescriptionArray.append(wsAciklama)
                     }
                                     
-                    if let location = document.get("workshopLocation") as? String {
-                        self.workshopLocationArray.append(location)
+                    if let wsSehir = document.get("wsSehir") as? String {
+                        self.workshopLocationArray.append(wsSehir)
                     } else {
                     // Eğer workshopLocation bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
                         self.workshopLocationArray.append("Bilgi Yok")
@@ -87,14 +87,14 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userEmailArray.count
+        return self.workshopInstructorArray.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomePageCell
-                cell.workshopByLabel.text = self.userEmailArray[indexPath.row]
+                cell.workshopByLabel.text = self.workshopInstructorArray[indexPath.row]
                 cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
-                cell.workshopDateTimeLabel.text = self.workshopDateArray[indexPath.row]
+                cell.workshopDateTimeLabel.text = self.workshopDateTimeArray[indexPath.row]
                 cell.workshopInformationLabel.text = "Bilgi Yok"
                 cell.workshopLocationLabel.text = self.workshopLocationArray[indexPath.row]
                 cell.workshopImageView.image = UIImage(named: "zeusLogo.png")

@@ -10,12 +10,17 @@ import UIKit
 class HomePageCell: UITableViewCell {
 
 
+   
     @IBOutlet weak var workshopImageView: UIImageView!
     @IBOutlet weak var workshopNameLabel: UILabel!
     @IBOutlet weak var workshopDateTimeLabel: UILabel!
     @IBOutlet weak var workshopLocationLabel: UILabel!
-    @IBOutlet weak var workshopInformationLabel: UILabel!
+    @IBOutlet weak var workshopParticipantsLabel: UILabel!
     @IBOutlet weak var workshopByLabel: UILabel!
+    @IBOutlet weak var workshopCategoryLabel: UILabel!
+    @IBOutlet weak var workshopFeeLabel: UILabel!
+    @IBOutlet weak var workshopExplanationLabel: UILabel!
+    @IBOutlet weak var workshopAddressLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

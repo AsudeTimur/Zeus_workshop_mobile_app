@@ -21,7 +21,11 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     var workshopDateTimeArray = [String]()
     var workshopLocationArray = [String]()
     var workshopDescriptionArray = [String]()
-
+    var workshopCategoryArray = [String]()
+    var workshopFeeArray = [String]()
+    var workshopAddressArray = [String]()
+    var workshopParticipantsArray = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +55,10 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.workshopImageArray.removeAll()
                 self.workshopDescriptionArray.removeAll()
                 self.workshopLocationArray.removeAll()
-                
+                self.workshopCategoryArray.removeAll()
+                self.workshopFeeArray.removeAll()
+                self.workshopAddressArray.removeAll()
+                self.workshopParticipantsArray.removeAll()
                 
                 for document in snapshot.documents {
                     let documentID = document.documentID
@@ -74,9 +81,24 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                     if let wsAciklama = document.get("wsAciklama") as? String {
                         self.workshopDescriptionArray.append(wsAciklama)
                     }
+                         
+                    if let wsKategori = document.get("wsKategori") as? String {
+                        self.workshopCategoryArray.append(wsKategori)
+                    }
+                    
+                    if let wsUcret = document.get("wsUcret") as? String {
+                        self.workshopFeeArray.append(wsUcret)
+                    }
+                    if let wsAdres = document.get("wsAdres") as? String {
+                        self.workshopAddressArray.append(wsAdres)
+                    }
                                     
                     if let wsSehir = document.get("wsSehir") as? String {
                         self.workshopLocationArray.append(wsSehir)
+                    }
+                    
+                    if let wsKatilimci = document.get("wsKatilimci") as? String {
+                        self.workshopParticipantsArray.append(wsKatilimci)
                     } else {
                     // Eğer workshopLocation bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
                         self.workshopLocationArray.append("Bilgi Yok")
@@ -95,8 +117,11 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 cell.workshopByLabel.text = self.workshopInstructorArray[indexPath.row]
                 cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
                 cell.workshopDateTimeLabel.text = self.workshopDateTimeArray[indexPath.row]
-                cell.workshopInformationLabel.text = "Bilgi Yok"
                 cell.workshopLocationLabel.text = self.workshopLocationArray[indexPath.row]
+                cell.workshopExplanationLabel.text = self.workshopDescriptionArray[indexPath.row]
+                cell.workshopCategoryLabel.text = self.workshopCategoryArray[indexPath.row]
+                cell.workshopFeeLabel.text = self.workshopFeeArray[indexPath.row]
+                cell.workshopAddressLabel.text = self.workshopAddressArray[indexPath.row]
                 cell.workshopImageView.image = UIImage(named: "zeusLogo.png")
 
                 return cell

@@ -22,7 +22,7 @@ class UserViewController: UIViewController {
     @IBAction func cikisYapButon(_ sender: Any) {
         do{
             try Auth.auth().signOut()
-            self.performSegue(withIdentifier: "toUserSettingsViewController", sender: nil)
+            self.performSegue(withIdentifier: "toViewController", sender: nil)
         }catch{
             print("Hata")
         }

@@ -189,14 +189,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kullanıcı Adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wol-h6-4Zm">
-                                <rect key="frame" x="16" y="97" width="100" height="21"/>
+                                <rect key="frame" x="16" y="97" width="361" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ad Soyad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRV-IE-Te0">
-                                <rect key="frame" x="16" y="244" width="77" height="21"/>
+                                <rect key="frame" x="16" y="244" width="361" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -245,7 +245,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hakkında" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFG-6n-cU7">
-                                <rect key="frame" x="16" y="273" width="71" height="21"/>
+                                <rect key="frame" x="16" y="273" width="361" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -271,13 +271,28 @@
                                     <segue destination="Pyk-nH-IwN" kind="presentation" identifier="toUserSettingsViewController" modalPresentationStyle="fullScreen" id="CvG-GU-a3U"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaB-sm-CA4">
+                                <rect key="frame" x="16" y="302" width="361" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Profili Düzenle">
+                                    <color key="baseBackgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Idd-FF-DHP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="XzU-io-pg6"/>
                     <connections>
+                        <outlet property="bioLabel" destination="eFG-6n-cU7" id="7LP-ta-ohG"/>
+                        <outlet property="followersCountLabel" destination="ab0-xl-7RT" id="3pv-Tg-hma"/>
+                        <outlet property="followingCountLabel" destination="4nX-Dg-KH7" id="eJG-S7-6zx"/>
+                        <outlet property="fullNameLabel" destination="xRV-IE-Te0" id="uA2-gJ-786"/>
                         <outlet property="profileImageView" destination="LFB-GI-xNa" id="014-Ay-96Z"/>
+                        <outlet property="usernameLabel" destination="Wol-h6-4Zm" id="FKB-8p-TE3"/>
+                        <outlet property="workshopsCountLabel" destination="VPa-dY-wBM" id="UWG-dV-Og8"/>
                         <segue destination="ENd-DX-rrw" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="4hi-bD-yGJ"/>
                     </connections>
                 </viewController>
@@ -340,7 +355,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konum" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2J-1S-KBE">
-                                                    <rect key="frame" x="178" y="76" width="162" height="21"/>
+                                                    <rect key="frame" x="178" y="75.666666666666671" width="162" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="k3U-4r-84J"/>
                                                     </constraints>
@@ -349,7 +364,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarih - Saat" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV9-Ig-Sb5">
-                                                    <rect key="frame" x="178" y="42" width="162" height="21"/>
+                                                    <rect key="frame" x="178" y="42" width="162" height="20.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="162" id="xbz-6S-sRZ"/>
                                                     </constraints>
@@ -400,25 +415,25 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.badge.clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ao5-Bd-9Zt">
-                                                    <rect key="frame" x="348" y="41.666666666666629" width="25" height="25"/>
+                                                    <rect key="frame" x="348" y="41.666666666666657" width="25" height="24.333333333333343"/>
                                                     <color key="tintColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22.666666666666686" id="cmy-wd-hY5"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fHD-dc-XL5">
-                                                    <rect key="frame" x="348" y="74.666666666666629" width="25" height="25"/>
+                                                    <rect key="frame" x="348" y="74" width="25" height="24.666666666666671"/>
                                                     <color key="tintColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="oe6-e1-BGq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HRi-Ds-TLa">
-                                                    <rect key="frame" x="348" y="107.66666666666663" width="25" height="25"/>
+                                                    <rect key="frame" x="348" y="106.66666666666666" width="25" height="25"/>
                                                     <color key="tintColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Katılımcılar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPN-UB-SpE">
-                                                    <rect key="frame" x="178" y="109" width="162" height="21"/>
+                                                    <rect key="frame" x="178" y="108.66666666666667" width="162" height="21.000000000000014"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="UhA-VU-f7a"/>
                                                     </constraints>

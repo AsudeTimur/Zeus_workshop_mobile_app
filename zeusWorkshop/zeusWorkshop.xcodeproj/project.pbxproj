@@ -110,10 +110,10 @@
 				D3B232B02BA9B9EB0098B8A8 /* Main.storyboard */,
 				D3D7F4C42BF367820068A959 /* UserSettingsViewController.swift */,
 				D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */,
+				D33E9E782BD17BF300F20BEA /* HomePageCell.swift */,
 				D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */,
 				D3B232B52BA9B9EC0098B8A8 /* LaunchScreen.storyboard */,
 				D3B232B82BA9B9EC0098B8A8 /* Info.plist */,
-				D33E9E782BD17BF300F20BEA /* HomePageCell.swift */,
 			);
 			path = zeusWorkshop;
 			sourceTree = "<group>";

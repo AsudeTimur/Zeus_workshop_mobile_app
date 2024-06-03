@@ -7,12 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestoreInternal
 
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
-    
+    @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var confirmPasswordText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,20 +22,42 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        if emailText.text != "" && passwordText.text != ""{
-                            Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) { (authdata, error) in
-                                if error != nil{
-                                    self.makeAlert(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Hata")
-                                }else{
-                                    self.performSegue(withIdentifier: "toTabBarController", sender: nil)
-                                }
-                                    
+        guard let email = emailText.text, !email.isEmpty,
+                      let username = usernameText.text, !username.isEmpty,
+                      let password = passwordText.text, !password.isEmpty,
+                      let confirmPassword = confirmPasswordText.text, !confirmPassword.isEmpty
+                else {
+                    makeAlert(titleInput: "Error", messageInput: "Please fill in all fields")
+                    return
+                }
+                
+                // Şifreleri karşılaştır
+                if password != confirmPassword {
+                    makeAlert(titleInput: "Error", messageInput: "Passwords do not match")
+                    return
+                }
+                
+                // Şifreler eşleşiyorsa kullanıcıyı kaydet
+                Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+                    if let error = error {
+                        self.makeAlert(titleInput: "Error", messageInput: error.localizedDescription)
+                    } else if let user = authResult?.user {
+                        // Kullanıcı başarıyla oluşturuldu, Firestore'a kullanıcı adı ve e-posta ekleyin
+                        let db = Firestore.firestore()
+                        db.collection("users").document(user.uid).setData([
+                            "username": username,
+                            "email": email
+                        ]) { error in
+                            if let error = error {
+                                self.makeAlert(titleInput: "Error", messageInput: "Failed to save user data: \(error.localizedDescription)")
+                            } else {
+                                // Veriler başarıyla kaydedildi, ana sayfaya yönlendir
+                                self.performSegue(withIdentifier: "toTabBarController", sender: nil)
                             }
-                        } else{
-                            makeAlert(titleInput: "Yanlış e-mail ya da Şifre", messageInput: "E-mail ya da şifre bir hesaba ait değil. Lütfen e-mail ya da şifreni kontrol edip tekrar dene.")
                         }
-
-    }
+                    }
+                }
+            }
     
     
     

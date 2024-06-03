@@ -15,13 +15,12 @@ class UserViewController: UIViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var workshopsCountLabel: UILabel!
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,50 +33,65 @@ class UserViewController: UIViewController {
     }
     
     func fetchUserProfile() {
-            if let user = Auth.auth().currentUser {
-                let uid = user.uid
-                let email = user.email
-                let photoURL = user.photoURL
-                
-                // Kullanıcı bilgilerini etiketlere yerleştir
-                usernameLabel.text = email
-                
-                // Profil fotoğrafını yükle
-                if let photoURL = photoURL {
-                    loadProfileImage(from: photoURL)
+        guard let user = Auth.auth().currentUser else {
+                    // Kullanıcı oturumu açık değil
+                    return
                 }
-                
-                // Diğer kullanıcı bilgilerini Firebase Firestore veya Realtime Database'den alabilirsiniz.
-                // Burada sadece Firestore örneğini göstereceğim.
+
+                let uid = user.uid
                 let db = Firestore.firestore()
-                let userRef = db.collection("users").document(uid)
                 
-                userRef.getDocument { (document, error) in
+                // Firestore'dan kullanıcı bilgilerini al
+                let docRef = db.collection("users").document(uid)
+                docRef.getDocument { (document, error) in
                     if let document = document, document.exists {
                         let data = document.data()
-                        self.fullNameLabel.text = data?["fullName"] as? String ?? "Ad Soyad"
-                        self.bioLabel.text = data?["bio"] as? String ?? "Bio"
-                        self.followersCountLabel.text = "\(data?["followersCount"] as? Int ?? 0)"
-                        self.followingCountLabel.text = "\(data?["followingCount"] as? Int ?? 0)"
-                        self.workshopsCountLabel.text = "\(data?["workshopsCount"] as? Int ?? 0)"
+                        let username = data?["username"] as? String ?? "Kullanıcı Adı Yok"
+                        let bio = data?["bio"] as? String ?? ""
+                        let followersCount = data?["followersCount"] as? Int ?? 0
+                        let followingCount = data?["followingCount"] as? Int ?? 0
+                        let workshopsCount = data?["workshopsCount"] as? Int ?? 0
+                        
+                        // Kullanıcı bilgilerini UI elemanlarına yerleştir
+                        self.usernameLabel.text = username
+                        self.bioLabel.text = bio
+                        self.followersCountLabel.text = "\(followersCount)"
+                        self.followingCountLabel.text = "\(followingCount)"
+                        self.workshopsCountLabel.text = "\(workshopsCount)"
+                        
+                        // Profil fotoğrafını yükleme
+                        if let photoURL = user.photoURL {
+                            self.loadProfileImage(from: photoURL)
+                        } else {
+                            self.profileImageView.image = UIImage(named: "defaultProfilePhoto")
+                        }
                     } else {
-                        print("Kullanıcı belgesi bulunamadı")
-                    }
-                }
-            } else {
-                print("Kullanıcı oturum açmamış")
-            }
-        }
-        
-        func loadProfileImage(from url: URL) {
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url) {
-                    DispatchQueue.main.async {
-                        self.profileImageView.image = UIImage(data: data)
+                        print("Document does not exist")
+                        self.usernameLabel.text = "Kullanıcı Adı Yok"
+                        self.bioLabel.text = ""
+                        self.followersCountLabel.text = "0"
+                        self.followingCountLabel.text = "0"
+                        self.workshopsCountLabel.text = "0"
+                        self.profileImageView.image = UIImage(named: "defaultProfilePhoto")
                     }
                 }
             }
-        }
+
+            func loadProfileImage(from url: URL) {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                        DispatchQueue.main.async {
+                            self.profileImageView.image = UIImage(data: data)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.profileImageView.image = UIImage(named: "defaultProfilePhoto")
+                        }
+                    }
+                }
+            }
+
+
         
      
     

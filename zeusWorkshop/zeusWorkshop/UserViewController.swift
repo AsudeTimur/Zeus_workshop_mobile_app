@@ -94,16 +94,7 @@ class UserViewController: UIViewController {
 
         
      
-    
-    //Firebase çıkış işlemi
-    @IBAction func cikisYapButon(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-            self.performSegue(withIdentifier: "toViewController", sender: nil)
-        }catch{
-            print("Hata")
-        }
-    }
+
     
     
 }

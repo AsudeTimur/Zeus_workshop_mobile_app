@@ -16,6 +16,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var workshopsCountLabel: UILabel!
@@ -35,6 +36,7 @@ class UserViewController: UIViewController {
     func fetchUserProfile() {
         guard let user = Auth.auth().currentUser else {
                     // Kullanıcı oturumu açık değil
+                    print("No authenticated user")
                     return
                 }
 
@@ -44,10 +46,17 @@ class UserViewController: UIViewController {
                 // Firestore'dan kullanıcı bilgilerini al
                 let docRef = db.collection("users").document(uid)
                 docRef.getDocument { (document, error) in
+                    if let error = error {
+                        print("Error fetching document: \(error)")
+                        self.displayDefaultProfile()
+                        return
+                    }
+                    
                     if let document = document, document.exists {
                         let data = document.data()
                         let username = data?["username"] as? String ?? "Kullanıcı Adı Yok"
                         let bio = data?["bio"] as? String ?? ""
+                        let fullName = data?["fullName"] as? String ?? ""
                         let followersCount = data?["followersCount"] as? Int ?? 0
                         let followingCount = data?["followingCount"] as? Int ?? 0
                         let workshopsCount = data?["workshopsCount"] as? Int ?? 0
@@ -55,6 +64,7 @@ class UserViewController: UIViewController {
                         // Kullanıcı bilgilerini UI elemanlarına yerleştir
                         self.usernameLabel.text = username
                         self.bioLabel.text = bio
+                        self.fullNameLabel.text = fullName
                         self.followersCountLabel.text = "\(followersCount)"
                         self.followingCountLabel.text = "\(followingCount)"
                         self.workshopsCountLabel.text = "\(workshopsCount)"
@@ -67,12 +77,7 @@ class UserViewController: UIViewController {
                         }
                     } else {
                         print("Document does not exist")
-                        self.usernameLabel.text = "Kullanıcı Adı Yok"
-                        self.bioLabel.text = ""
-                        self.followersCountLabel.text = "0"
-                        self.followingCountLabel.text = "0"
-                        self.workshopsCountLabel.text = "0"
-                        self.profileImageView.image = UIImage(named: "defaultProfilePhoto")
+                        self.displayDefaultProfile()
                     }
                 }
             }
@@ -90,11 +95,16 @@ class UserViewController: UIViewController {
                     }
                 }
             }
-
-
-        
-     
-
+            
+            func displayDefaultProfile() {
+                self.usernameLabel.text = "Kullanıcı Adı Yok"
+                self.bioLabel.text = ""
+                self.fullNameLabel.text = "Tam Ad Yok"
+                self.followersCountLabel.text = "0"
+                self.followingCountLabel.text = "0"
+                self.workshopsCountLabel.text = "0"
+                self.profileImageView.image = UIImage(named: "defaultProfilePhoto")
+            }
+        }
     
-    
-}
+

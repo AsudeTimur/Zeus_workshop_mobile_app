@@ -40,7 +40,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             
             fireStoreDatabase.collection("Workshops").addSnapshotListener { (snapshot, error) in
                 if let error = error {
-                    print("Error fetching documents: \(error.localizedDescription)")
+                    print("Belgeleri getirirken hata oluştu")
                     return
                 }
                 

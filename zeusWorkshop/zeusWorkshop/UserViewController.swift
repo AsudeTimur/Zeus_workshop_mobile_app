@@ -36,7 +36,7 @@ class UserViewController: UIViewController {
     func fetchUserProfile() {
         guard let user = Auth.auth().currentUser else {
                     // Kullanıcı oturumu açık değil
-                    print("No authenticated user")
+                    print("Kimliği doğrulanmış kullanıcı yok")
                     return
                 }
 
@@ -47,7 +47,7 @@ class UserViewController: UIViewController {
                 let docRef = db.collection("users").document(uid)
                 docRef.getDocument { (document, error) in
                     if let error = error {
-                        print("Error fetching document: \(error)")
+                        print("Belge getirilirken hata oluştu")
                         self.displayDefaultProfile()
                         return
                     }
@@ -76,7 +76,7 @@ class UserViewController: UIViewController {
                             self.profileImageView.image = UIImage(named: "defaultProfilePhoto")
                         }
                     } else {
-                        print("Document does not exist")
+                        print("Belge mevcut değil")
                         self.displayDefaultProfile()
                     }
                 }

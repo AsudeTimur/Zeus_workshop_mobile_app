@@ -27,20 +27,20 @@ class SignUpViewController: UIViewController {
                       let password = passwordText.text, !password.isEmpty,
                       let confirmPassword = confirmPasswordText.text, !confirmPassword.isEmpty
                 else {
-                    makeAlert(titleInput: "Error", messageInput: "Please fill in all fields")
+                    makeAlert(titleInput: "Hata", messageInput: "Lütfen tüm alanları doldurun")
                     return
                 }
                 
                 // Şifreleri karşılaştır
                 if password != confirmPassword {
-                    makeAlert(titleInput: "Error", messageInput: "Passwords do not match")
+                    makeAlert(titleInput: "Hata", messageInput: "Parolalar eşleşmiyor")
                     return
                 }
                 
                 // Şifreler eşleşiyorsa kullanıcıyı kaydet
                 Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                     if let error = error {
-                        self.makeAlert(titleInput: "Error", messageInput: error.localizedDescription)
+                        self.makeAlert(titleInput: "Hata", messageInput: error.localizedDescription)
                     } else if let user = authResult?.user {
                         // Kullanıcı başarıyla oluşturuldu, Firestore'a kullanıcı adı ve e-posta ekleyin
                         let db = Firestore.firestore()
@@ -49,7 +49,7 @@ class SignUpViewController: UIViewController {
                             "email": email
                         ]) { error in
                             if let error = error {
-                                self.makeAlert(titleInput: "Error", messageInput: "Failed to save user data: \(error.localizedDescription)")
+                                self.makeAlert(titleInput: "Hata", messageInput: "Kullanıcı verileri kaydedilemedi")
                             } else {
                                 // Veriler başarıyla kaydedildi, ana sayfaya yönlendir
                                 self.performSegue(withIdentifier: "toTabBarController", sender: nil)

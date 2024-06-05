@@ -49,7 +49,7 @@ class UserSettingsViewController: UIViewController {
                             self.locationText.text = data["location"] as? String
                         }
                     } else {
-                        print("Document does not exist")
+                        print("Belge mevcut değil")
                     }
                 }
         }
@@ -86,16 +86,16 @@ class UserSettingsViewController: UIViewController {
                         // Güncellenmiş verileri kaydet
                         db.collection("users").document(uid).setData(data) { error in
                             if let error = error {
-                                print("Error updating document: \(error)")
-                                self.makeAlert(titleInput: "Error", messageInput: "Failed to save user data: \(error.localizedDescription)")
+                                print("Belge güncellenirken hata oluştu")
+                                self.makeAlert(titleInput: "Error", messageInput: "Kullanıcı verileri kaydedilemedi")
                             } else {
-                                print("Document successfully updated")
-                                self.makeAlert(titleInput: "Success", messageInput: "Profile updated successfully")
+                                print("Belge başarıyla güncellendi")
+                                self.makeAlert(titleInput: "Başarılı", messageInput: "Profil başarıyla güncellendi")
                             }
                         }
                     } else {
-                        print("Document does not exist")
-                        self.makeAlert(titleInput: "Error", messageInput: "User data does not exist")
+                        print("Belge mevcut değil")
+                        self.makeAlert(titleInput: "Hata", messageInput: "Kullanıcı verileri mevcut değil")
                     }
                 }
     }
@@ -114,6 +114,7 @@ class UserSettingsViewController: UIViewController {
         self.performSegue(withIdentifier: "toUserViewController", sender: nil)
     }
     
+   
     func makeAlert(titleInput:String, messageInput:String){
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
         let okButon = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: nil)

@@ -55,6 +55,7 @@ class UserSettingsViewController: UIViewController {
         }
 
     @IBAction func changePasswordClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "toChangePassViewController", sender: nil)
     }
     
     @IBAction func deleteAccountClicked(_ sender: Any) {

@@ -67,6 +67,9 @@ class DeleteAccountViewController: UIViewController {
     
     
     
+    @IBAction func closeClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "toCloseDeleteAccountVC", sender: nil)
+    }
     
     func makeAlert(titleInput:String, messageInput:String){
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)

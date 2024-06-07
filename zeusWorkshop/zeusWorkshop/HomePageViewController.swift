@@ -114,19 +114,27 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomePageCell
-                cell.workshopByLabel.text = self.workshopInstructorArray[indexPath.row]
-                cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
-                cell.workshopDateTimeLabel.text = self.workshopDateTimeArray[indexPath.row]
-                cell.workshopLocationLabel.text = self.workshopLocationArray[indexPath.row]
-                cell.workshopExplanationLabel.text = self.workshopDescriptionArray[indexPath.row]
-                cell.workshopCategoryLabel.text = self.workshopCategoryArray[indexPath.row]
-                cell.workshopFeeLabel.text = self.workshopFeeArray[indexPath.row]
-                cell.workshopAddressLabel.text = self.workshopAddressArray[indexPath.row]
-                cell.workshopImageView.image = UIImage(named: "zeusLogo.png")
+            cell.workshopByLabel.attributedText = createAttributedText(boldText: "Eğitmen: ", normalText: self.workshopInstructorArray[indexPath.row])
+                    cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
+                    cell.workshopDateTimeLabel.text = self.workshopDateTimeArray[indexPath.row]
+                    cell.workshopLocationLabel.attributedText = createAttributedText(boldText: "", normalText: self.workshopLocationArray[indexPath.row])
+                    cell.workshopExplanationLabel.attributedText = createAttributedText(boldText: "Açıklama: ", normalText: self.workshopDescriptionArray[indexPath.row])
+                    cell.workshopCategoryLabel.attributedText = createAttributedText(boldText: "Kategori: ", normalText: self.workshopCategoryArray[indexPath.row])
+                    cell.workshopFeeLabel.attributedText = createAttributedText(boldText: "Ücret: ", normalText: self.workshopFeeArray[indexPath.row])
+                    cell.workshopAddressLabel.attributedText = createAttributedText(boldText: "Adres: ", normalText: self.workshopAddressArray[indexPath.row])
+                    cell.workshopImageView.image = UIImage(named: "zeusLogo.png")
 
                 return cell
         }
-    @IBAction func workshopDetailClicked(_ sender: Any) {
-        self.performSegue(withIdentifier: "toWorkshopContentPage", sender: nil)
-    }
+    
+    func createAttributedText(boldText: String, normalText: String) -> NSAttributedString {
+            let boldAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 17)]
+            let normalAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 17)]
+            
+            let boldString = NSMutableAttributedString(string: boldText, attributes: boldAttributes)
+            let normalString = NSAttributedString(string: normalText, attributes: normalAttributes)
+            
+            boldString.append(normalString)
+            return boldString
+        }
 }

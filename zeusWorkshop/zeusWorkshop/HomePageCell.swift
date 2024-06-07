@@ -15,7 +15,6 @@ class HomePageCell: UITableViewCell {
     @IBOutlet weak var workshopNameLabel: UILabel!
     @IBOutlet weak var workshopDateTimeLabel: UILabel!
     @IBOutlet weak var workshopLocationLabel: UILabel!
-    @IBOutlet weak var workshopParticipantsLabel: UILabel!
     @IBOutlet weak var workshopByLabel: UILabel!
     @IBOutlet weak var workshopCategoryLabel: UILabel!
     @IBOutlet weak var workshopFeeLabel: UILabel!

@@ -30,6 +30,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         wsImageView.isUserInteractionEnabled = true //resmi tıklanabilir yapmak
                 let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
                 wsImageView.addGestureRecognizer(gestureRecognizer)
+        
+       
     }
     
     //kütüphaneden fotoğraf seçme
@@ -55,38 +57,72 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     //verileri firebase'e kaydetme
     @IBAction func paylasButonClicked(_ sender: Any) {
         let storage = Storage.storage()
-        let storageReference = storage.reference()
-        
-        let mediaFolder = storageReference.child("media")
-        
-        if let data = wsImageView.image?.jpegData(compressionQuality: 0.5){
-            
-            let uuid = UUID().uuidString //her kullanıldığında unique id'yi stringe çevirir
-            let imageReference = mediaFolder.child("\(uuid).jpeg")
-            imageReference.putData(data, metadata: nil){
-                (metadata, error) in
-                if error != nil{
-                    self.makeAlert(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Hata")
-                }else{
-                    imageReference.downloadURL(){(url, error) in
-                        if error == nil{
-                            let imageUrl = url?.absoluteString
-                            
-                            //DataBase
-                            
-                            let firestoreDatabase = Firestore.firestore()
-                            //firebase db'leri okumak, yazmak, değişikleri dinlemek vb.
-                            var firestorReference : DocumentReference? = nil
-                            let firestoreWorkshop = ["imageURL" : imageUrl!, "wsEgitmen" : self.wsEgitmen.text!, "wsAdi" : self.wsAdi.text! , "wsUcret" : self.wsUcret.text!, "wsAciklama" : self.wsAciklama.text!, "wsAdres" : self.wsAdres.text!, "wsSehir" : self.wsSehir.text!, "wsKategori" : self.wsKategori.text!, "wsTarihSaat" : self.wsTarihSaat.text!] as [String : Any]
-                            firestorReference = firestoreDatabase.collection("Workshops").addDocument(data: firestoreWorkshop, completion: { (error) in
-                                if error != nil {
-                                    self.makeAlert(titleInput: "Hata!", messageInput: error?.localizedDescription ?? "Hata")
+                let storageReference = storage.reference()
+                
+                let mediaFolder = storageReference.child("media")
+                
+                if let data = wsImageView.image?.jpegData(compressionQuality: 0.5) {
+                    let uuid = UUID().uuidString // Her kullanıldığında unique id'yi stringe çevirir
+                    let imageReference = mediaFolder.child("\(uuid).jpeg")
+                    imageReference.putData(data, metadata: nil) { (metadata, error) in
+                        if error != nil {
+                            self.makeAlert(titleInput: "Hata", messageInput: error?.localizedDescription ?? "Hata")
+                        } else {
+                            imageReference.downloadURL() { (url, error) in
+                                if error == nil {
+                                    let imageUrl = url?.absoluteString
+                                    
+                                    // Database
+                                    let firestoreDatabase = Firestore.firestore()
+                                    // Firebase db'leri okumak, yazmak, değişikleri dinlemek vb.
+                                    var firestorReference: DocumentReference? = nil
+                                    let firestoreWorkshop = [
+                                        "imageURL": imageUrl!,
+                                        "wsEgitmen": self.wsEgitmen.text!,
+                                        "wsAdi": self.wsAdi.text!,
+                                        "wsUcret": self.wsUcret.text!,
+                                        "wsAciklama": self.wsAciklama.text!,
+                                        "wsAdres": self.wsAdres.text!,
+                                        "wsSehir": self.wsSehir.text!,
+                                        "wsKategori": self.wsKategori.text!,
+                                        "wsTarihSaat": self.wsTarihSaat.text!
+                                    ] as [String: Any]
+                                    
+                                    firestorReference = firestoreDatabase.collection("Workshops").addDocument(data: firestoreWorkshop) { (error) in
+                                        if error != nil {
+                                            self.makeAlert(titleInput: "Hata!", messageInput: error?.localizedDescription ?? "Hata")
+                                        } else {
+                                            self.clearTextFields()
+                                        }
+                                    }
                                 }
-                            })
+                            }
                         }
                     }
                 }
             }
+            
+            func clearTextFields() {
+                self.wsImageView.image = UIImage(named: "placeholder.png") // or any placeholder image
+                self.wsAdi.text = ""
+                self.wsAciklama.text = ""
+                self.wsEgitmen.text = ""
+                self.wsAdres.text = ""
+                self.wsSehir.text = ""
+                self.wsUcret.text = ""
+                self.wsKategori.text = ""
+                self.wsTarihSaat.text = ""
+            }
+            
+            // UITextFieldDelegate yöntemi - karakter sınırı
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard let currentText = textField.text else { return true }
+            let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            
+            // Sadece wsAciklama ve wsAdres alanları için sınır koy
+            if textField == wsAciklama || textField == wsAdres {
+                return newText.count <= 130
+            }
+            return true
         }
-    }
 }

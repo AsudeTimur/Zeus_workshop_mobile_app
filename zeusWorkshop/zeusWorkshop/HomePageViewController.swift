@@ -100,7 +100,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                     if let wsKatilimci = document.get("wsKatilimci") as? String {
                         self.workshopParticipantsArray.append(wsKatilimci)
                     } else {
-                    // Eğer workshopLocation bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
+                    // Eğer workshopKatilimci bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
                         self.workshopLocationArray.append("Bilgi Yok")
                        }
                     }

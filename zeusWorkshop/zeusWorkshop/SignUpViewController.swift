@@ -15,11 +15,30 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var confirmPasswordText: UITextField!
+    
+    var showPassword: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupPasswordVisibility()
     }
+    
+    func setupPasswordVisibility() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(togglePasswordVisibility))
+            passwordText.isSecureTextEntry = true
+            passwordText.rightViewMode = .always
+            passwordText.rightView = UIImageView(image: UIImage(systemName: "eye.slash.fill"))
+            passwordText.rightView?.addGestureRecognizer(tapGesture)
+            passwordText.rightView?.isUserInteractionEnabled = true
+        }
+        
+        @objc func togglePasswordVisibility() {
+            showPassword.toggle()
+            passwordText.isSecureTextEntry = !showPassword
+            let imageName = showPassword ? "eye.fill" : "eye.slash.fill"
+            passwordText.rightView = UIImageView(image: UIImage(systemName: imageName))
+        }
     
     @IBAction func signUpButton(_ sender: Any) {
         guard let email = emailText.text, !email.isEmpty,

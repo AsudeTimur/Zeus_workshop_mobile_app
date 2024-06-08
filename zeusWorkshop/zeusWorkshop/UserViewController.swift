@@ -33,6 +33,11 @@ class UserViewController: UIViewController {
     }
     
     
+    @IBAction func editProfileClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "toEditProfileViewController", sender: nil)
+    }
+    
+    
     func fetchUserProfile() {
         guard let user = Auth.auth().currentUser else {
                     // Kullanıcı oturumu açık değil

@@ -13,6 +13,7 @@
 		D3254ACA2BB45AC900D72F0E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3254AC92BB45AC900D72F0E /* UserViewController.swift */; };
 		D33BCA8B2BB588250063D953 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D33BCA8A2BB588250063D953 /* GoogleService-Info.plist */; };
 		D33E9E792BD17BF300F20BEA /* HomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E9E782BD17BF300F20BEA /* HomePageCell.swift */; };
+		D35EA6932C14874600DCD072 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EA6922C14874600DCD072 /* EditProfileViewController.swift */; };
 		D399FA2B2BF34012002C9D67 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D399FA2A2BF34012002C9D67 /* .gitignore */; };
 		D3AF364A2C1092AA00636248 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF36492C1092AA00636248 /* ChangePasswordViewController.swift */; };
 		D3B232AB2BA9B9EB0098B8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		D3254AC92BB45AC900D72F0E /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		D33BCA8A2BB588250063D953 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D33E9E782BD17BF300F20BEA /* HomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCell.swift; sourceTree = "<group>"; };
+		D35EA6922C14874600DCD072 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D399FA2A2BF34012002C9D67 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		D3AF36492C1092AA00636248 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		D3B232A72BA9B9EB0098B8A8 /* zeusWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zeusWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				D3B232AA2BA9B9EB0098B8A8 /* AppDelegate.swift */,
 				D3B232AC2BA9B9EB0098B8A8 /* SceneDelegate.swift */,
 				D3B232AE2BA9B9EB0098B8A8 /* ViewController.swift */,
+				D35EA6922C14874600DCD072 /* EditProfileViewController.swift */,
 				D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */,
 				D3254AC92BB45AC900D72F0E /* UserViewController.swift */,
 				D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */,
@@ -241,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35EA6932C14874600DCD072 /* EditProfileViewController.swift in Sources */,
 				D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */,
 				D3B232AF2BA9B9EB0098B8A8 /* ViewController.swift in Sources */,
 				D3254ACA2BB45AC900D72F0E /* UserViewController.swift in Sources */,

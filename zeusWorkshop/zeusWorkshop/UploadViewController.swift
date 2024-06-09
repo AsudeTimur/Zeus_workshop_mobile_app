@@ -99,6 +99,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 } else {
                     self.makeAlert(titleInput: "Hata", messageInput: "Lütfen tüm alanları doldurun.")
                 }
+        
             }
 
             func validateFields() -> Bool {

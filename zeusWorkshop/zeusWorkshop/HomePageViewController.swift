@@ -24,7 +24,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     var workshopCategoryArray = [String]()
     var workshopFeeArray = [String]()
     var workshopAddressArray = [String]()
-    var workshopParticipantsArray = [String]()
+    var workshopIDArray = [String]()
     
 
     override func viewDidLoad() {
@@ -58,7 +58,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.workshopCategoryArray.removeAll()
                 self.workshopFeeArray.removeAll()
                 self.workshopAddressArray.removeAll()
-                self.workshopParticipantsArray.removeAll()
+                self.workshopIDArray.removeAll()
+
                 
                 for document in snapshot.documents {
                     let documentID = document.documentID
@@ -74,8 +75,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                     if let wsTarihSaat = document.get("wsTarihSaat") as? String {
                         self.workshopDateTimeArray.append(wsTarihSaat)
                     }
-                    if let imageUrl = document.get("imageUrl") as? String {
-                        self.workshopImageArray.append(imageUrl)
+                    if let imageURL = document.get("imageURL") as? String {
+                        self.workshopImageArray.append(imageURL)
                     }
                                     
                     if let wsAciklama = document.get("wsAciklama") as? String {
@@ -93,12 +94,9 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
                         self.workshopAddressArray.append(wsAdres)
                     }
                                     
+                    
                     if let wsSehir = document.get("wsSehir") as? String {
                         self.workshopLocationArray.append(wsSehir)
-                    }
-                    
-                    if let wsKatilimci = document.get("wsKatilimci") as? String {
-                        self.workshopParticipantsArray.append(wsKatilimci)
                     } else {
                     // Eğer workshopKatilimci bilgisi yoksa veya boşsa "Bilgi Yok" olarak ayarla
                         self.workshopLocationArray.append("Bilgi Yok")
@@ -115,14 +113,15 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomePageCell
             cell.workshopByLabel.attributedText = createAttributedText(boldText: "Eğitmen: ", normalText: self.workshopInstructorArray[indexPath.row])
-                    cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
-                    cell.workshopDateTimeLabel.text = self.workshopDateTimeArray[indexPath.row]
-                    cell.workshopLocationLabel.attributedText = createAttributedText(boldText: "", normalText: self.workshopLocationArray[indexPath.row])
-                    cell.workshopExplanationLabel.attributedText = createAttributedText(boldText: "Açıklama: ", normalText: self.workshopDescriptionArray[indexPath.row])
-                    cell.workshopCategoryLabel.attributedText = createAttributedText(boldText: "Kategori: ", normalText: self.workshopCategoryArray[indexPath.row])
-                    cell.workshopFeeLabel.attributedText = createAttributedText(boldText: "Ücret: ", normalText: self.workshopFeeArray[indexPath.row])
-                    cell.workshopAddressLabel.attributedText = createAttributedText(boldText: "Adres: ", normalText: self.workshopAddressArray[indexPath.row])
-                    cell.workshopImageView.image = UIImage(named: "zeusLogo.png")
+            cell.workshopNameLabel.text = self.workshopNameArray[indexPath.row]
+            cell.workshopDateTimeLabel.text = self.workshopDateTimeArray[indexPath.row]
+            cell.workshopLocationLabel.attributedText = createAttributedText(boldText: "", normalText: self.workshopLocationArray[indexPath.row])
+            cell.workshopExplanationLabel.attributedText = createAttributedText(boldText: "Açıklama: ", normalText: self.workshopDescriptionArray[indexPath.row])
+            cell.workshopCategoryLabel.attributedText = createAttributedText(boldText: "Kategori: ", normalText: self.workshopCategoryArray[indexPath.row])
+            cell.workshopFeeLabel.attributedText = createAttributedText(boldText: "Ücret: ", normalText: self.workshopFeeArray[indexPath.row])
+            cell.workshopAddressLabel.attributedText = createAttributedText(boldText: "Adres: ", normalText: self.workshopAddressArray[indexPath.row])
+            cell.workshopImageView.sd_setImage(with: URL(string: self.workshopImageArray[indexPath.row]))
+            
 
                 return cell
         }
@@ -137,4 +136,10 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             boldString.append(normalString)
             return boldString
         }
+    
+    @IBAction func joinButtonTapped(_ sender: Any) {
+        
+    }
+    
+    
 }

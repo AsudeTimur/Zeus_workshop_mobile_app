@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0C151AA8EE3664D48DD5C42 /* Pods_zeusWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61B5D2BCC9D98906724FA46 /* Pods_zeusWorkshop.framework */; };
+		D3243FAD2C14A05F00078B2D /* WorkshopsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3243FAC2C14A05F00078B2D /* WorkshopsTableViewCell.swift */; };
 		D3254AC62BB45A8700D72F0E /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3254AC52BB45A8700D72F0E /* UploadViewController.swift */; };
 		D3254AC82BB45AB900D72F0E /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */; };
 		D3254ACA2BB45AC900D72F0E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3254AC92BB45AC900D72F0E /* UserViewController.swift */; };
@@ -23,6 +24,7 @@
 		D3B232B42BA9B9EC0098B8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B32BA9B9EC0098B8A8 /* Assets.xcassets */; };
 		D3B232B72BA9B9EC0098B8A8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D3B232B62BA9B9EC0098B8A8 /* Base */; };
 		D3BCCF822BEA5D31009B9904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */; };
+		D3CAEBBB2C15AE1800C5C777 /* WorkshopsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAEBBA2C15AE1800C5C777 /* WorkshopsCell.swift */; };
 		D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */; };
 		D3D7F4C52BF367820068A959 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7F4C42BF367820068A959 /* UserSettingsViewController.swift */; };
 		D3D93ACA2C0E67510099E33F /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D93AC92C0E67510099E33F /* DeleteAccountViewController.swift */; };
@@ -32,6 +34,7 @@
 		23D73601BC745C1D15F5C702 /* Pods-zeusWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeusWorkshop.release.xcconfig"; path = "Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop.release.xcconfig"; sourceTree = "<group>"; };
 		54A65090D17E1D557305C5E5 /* Pods-zeusWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zeusWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-zeusWorkshop/Pods-zeusWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
 		A61B5D2BCC9D98906724FA46 /* Pods_zeusWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zeusWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3243FAC2C14A05F00078B2D /* WorkshopsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopsTableViewCell.swift; sourceTree = "<group>"; };
 		D3254AC52BB45A8700D72F0E /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		D3254AC92BB45AC900D72F0E /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		D3B232B62BA9B9EC0098B8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B232B82BA9B9EC0098B8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BCCF812BEA5D31009B9904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D3CAEBBA2C15AE1800C5C777 /* WorkshopsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopsCell.swift; sourceTree = "<group>"; };
 		D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		D3D7F4C42BF367820068A959 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		D3D93AC92C0E67510099E33F /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +116,9 @@
 				D35EA6922C14874600DCD072 /* EditProfileViewController.swift */,
 				D3D6E0072BE938DD00D5FBBE /* ForgotPassViewController.swift */,
 				D3254AC92BB45AC900D72F0E /* UserViewController.swift */,
+				D3CAEBBA2C15AE1800C5C777 /* WorkshopsCell.swift */,
 				D3254AC72BB45AB900D72F0E /* HomePageViewController.swift */,
+				D3243FAC2C14A05F00078B2D /* WorkshopsTableViewCell.swift */,
 				D3254AC52BB45A8700D72F0E /* UploadViewController.swift */,
 				D3B232B02BA9B9EB0098B8A8 /* Main.storyboard */,
 				D3AF36492C1092AA00636248 /* ChangePasswordViewController.swift */,
@@ -246,6 +252,7 @@
 			files = (
 				D35EA6932C14874600DCD072 /* EditProfileViewController.swift in Sources */,
 				D3D6E0082BE938DD00D5FBBE /* ForgotPassViewController.swift in Sources */,
+				D3CAEBBB2C15AE1800C5C777 /* WorkshopsCell.swift in Sources */,
 				D3B232AF2BA9B9EB0098B8A8 /* ViewController.swift in Sources */,
 				D3254ACA2BB45AC900D72F0E /* UserViewController.swift in Sources */,
 				D3254AC62BB45A8700D72F0E /* UploadViewController.swift in Sources */,
@@ -253,6 +260,7 @@
 				D3D7F4C52BF367820068A959 /* UserSettingsViewController.swift in Sources */,
 				D3254AC82BB45AB900D72F0E /* HomePageViewController.swift in Sources */,
 				D3BCCF822BEA5D31009B9904 /* SignUpViewController.swift in Sources */,
+				D3243FAD2C14A05F00078B2D /* WorkshopsTableViewCell.swift in Sources */,
 				D33E9E792BD17BF300F20BEA /* HomePageCell.swift in Sources */,
 				D3AF364A2C1092AA00636248 /* ChangePasswordViewController.swift in Sources */,
 				D3D93ACA2C0E67510099E33F /* DeleteAccountViewController.swift in Sources */,

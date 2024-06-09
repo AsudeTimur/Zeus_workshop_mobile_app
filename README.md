@@ -9,7 +9,8 @@ Bu platform, kullanıcıların el sanatları workshoplarını kolayca bulmaları
 ## Proje Sunum Videosu
 
 [Proje Sunum Videosunu İzleyin](https://www.youtube.com/watch?v=_hBeqnKZNJU)
-[Proje Canlı Demo](https://github.com/AsudeTimur/Zeus_workshop_mobile_app/blob/main/zeus.mov)
+
+[Proje Canlı Demo İndirmek İçin Tıklayınız](https://github.com/AsudeTimur/Zeus_workshop_mobile_app/blob/main/zeus.mov)
 
 ## Özellikler
 
